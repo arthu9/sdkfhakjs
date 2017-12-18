@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Add a Student</h1>
+	{% from "includes/_formhelpers.html" import render_field %}
+	<form method="POST" action="">
+		<div class="form-group">
+			{{render_field(form.idNum, class_="form-control")}}
+		</div>
+		<div class="form-group">
+			{{render_field(form.courseId, class_="form-control")}}
+		</div>
+		<div class="form-group">
+			{{render_field(form.firstName, class_="form-control")}}
+		</div>
+		<div class="form-group">
+			{{render_field(form.middleName, class_="form-control")}}
+		</div>
+		<div class="form-group">
+			{{render_field(form.lastName, class_="form-control")}}
+		</div>
+		<div class="form-group">
+			{{render_field(form.sex, class_="form-control")}}
+		</div>
+		
+		<p><input type="submit" class="btn btn-primary"   value="Submit"></p>
+		<a href="/listCourse" class="btn btn-primary">Show the list of Courses</a>
+
+
+	</form>
+{% endblock %}

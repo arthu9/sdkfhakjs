@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Student Database</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	</head>
+	<body>
+		{% include 'includes/_navbar.html' %}
+		<div class = "container">
+
+			{% include 'includes/_messages.html' %}
+			{% block body %}{% endblock %}
+		</div>
+
+		<script src="/static/js/bootstrap.min.js"></script>
+	</body>
+</html>

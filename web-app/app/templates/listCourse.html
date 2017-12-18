@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>COURSES</h1><a href = '/deleteAllCourse' class = 'btn btn-danger'>Delete All</a>
+	<table class = "table table-hover">
+	<thead>
+		<tr>
+			<th>Action</th>
+			<th>Course ID</th>
+			<th>Course Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in rows %}
+		<tr>
+			<td><a href="/updateCourse/{{row.courseId}}" class = "btn btn-link">Edit</a><a href = "/deleteCourse/{{row.courseId}}" class = "btn btn-link">Delete</a></td>
+			<td>{{row.courseId}}</td>
+			<td>{{row.courseName}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>STUDENTS</h1>
+      <table class="table table-hover">
+         <thead>
+            <th>Action</th>
+            <th>ID number</th>
+            <th>Course ID</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+         </thead>
+         {% for studentSearch in studentSearchs %}
+         <tbody>
+            <tr>
+               <td><a href="/updateStudent/{{studentSearch.idNum}}" class = "btn">Edit</a><a href = "/deleteStudent/{{studentSearch.idNum}}" class = "btn">Delete</a></td>
+               <td>{{studentSearch.idNum}}</td>
+               <td>{{studentSearch.courseId}}</td>
+               <td>{{studentSearch.firstName}}</td>
+               <td>{{studentSearch.middleName}}</td>
+               <td>{{studentSearch.lastName}}</td>	
+               <td>{{studentSearch.sex}}</td>
+            </tr>
+         </tbody>
+         {% endfor %}
+      </table>
+      <br><br>
+      <h1>COURSES</h1>
+	<table class = "table table-hover">
+	<thead>
+		<tr>
+			<th>Action</th>
+			<th>Course ID</th>
+			<th>Course Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for courseSearch in courseSearchs %}
+		<tr>
+			<td><a href="/updateCourse/{{courseSearch.courseId}}" class = "btn">Edit</a><a href = "/deleteCourse/{{courseSearch.courseId}}" class = "btn">Delete</a></td>
+			<td>{{courseSearch.courseId}}</td>
+			<td>{{courseSearch.courseName}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+
+{% endblock %}

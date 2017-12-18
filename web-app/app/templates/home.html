@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<div class = "jumbotron text-center">
+		<h1>Welcome Students</h1>
+		<p class = "lead">This application is for Student's Database</p>
+	</div>
+	<div class = "text-center">
+		<a href="/addStudent" class="btn btn-primary btn-lg">Add Student</a>
+		<a href="/addCourse" class="btn btn-primary btn-lg">Add Course</a><br><br>
+		<a href="/listStudent" class="btn btn-success btn-lg">Show Students</a>
+      	<a href="/listCourse" class="btn btn-success btn-lg">Show Courses</a>
+    </div>
+
+{% endblock  %}
